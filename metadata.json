@@ -1,0 +1,6 @@
+{
+  "name": "Harshil - 3D Creator",
+  "description": "A 3D Creator portfolio landing page for Harshil, featuring a dark theme, Kanit font, scroll animations, and interactive elements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
