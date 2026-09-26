@@ -3,6 +3,25 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { LiveProjectButton } from '../ui/LiveProjectButton';
 import { FadeIn } from '../ui/FadeIn';
 
+const fallbackPreview = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+  <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'>
+    <defs>
+      <linearGradient id='bg' x1='0' x2='1' y1='0' y2='1'>
+        <stop offset='0%' stop-color='#111111'/>
+        <stop offset='100%' stop-color='#2a3640'/>
+      </linearGradient>
+    </defs>
+    <rect width='1200' height='800' fill='url(#bg)'/>
+    <rect x='80' y='80' width='1040' height='640' rx='40' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.12)'/>
+    <rect x='140' y='180' width='360' height='28' rx='14' fill='rgba(255,255,255,0.18)'/>
+    <rect x='140' y='236' width='520' height='24' rx='12' fill='rgba(255,255,255,0.10)'/>
+    <rect x='140' y='290' width='620' height='24' rx='12' fill='rgba(255,255,255,0.10)'/>
+    <rect x='140' y='430' width='390' height='180' rx='24' fill='rgba(255,255,255,0.06)'/>
+    <rect x='560' y='430' width='420' height='180' rx='24' fill='rgba(255,255,255,0.06)'/>
+    <text x='600' y='392' text-anchor='middle' fill='#D7E2EA' font-family='Arial, sans-serif' font-size='42' font-weight='700'>Preview unavailable</text>
+  </svg>
+`);
+
 const projects = [
   {
     num: "01",
@@ -94,6 +113,12 @@ interface ProjectCardProps {
   totalCards: number;
 }
 
+function handleBrokenPreview(event: React.SyntheticEvent<HTMLImageElement>) {
+  const target = event.currentTarget;
+  target.onerror = null;
+  target.src = fallbackPreview;
+}
+
 function ProjectCard({ project, index, progress, range, targetScale, totalCards }: ProjectCardProps) {
   // Use framer motion to scale down the card as we scroll past it
   const scale = useTransform(progress, range, [1, targetScale]);
@@ -128,14 +153,14 @@ function ProjectCard({ project, index, progress, range, targetScale, totalCards 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 flex-1 w-full h-full pb-2 md:pb-4 rounded-xl overflow-hidden min-h-[300px] sm:min-h-0">
           <div className="w-full sm:w-[40%] flex flex-row sm:flex-col gap-3 sm:gap-6">
             <div className="flex-1 sm:w-full rounded-[20px] sm:rounded-[40px] md:rounded-[60px] overflow-hidden sm:h-[clamp(130px,16vw,230px)] aspect-square sm:aspect-auto">
-              <img src={project.images.col1_1} alt="Project Detail" className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
+              <img src={project.images.col1_1} alt="Project Detail" onError={handleBrokenPreview} className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
             </div>
             <div className="flex-1 sm:w-full rounded-[20px] sm:rounded-[40px] md:rounded-[60px] overflow-hidden sm:h-[clamp(160px,22vw,340px)] aspect-square sm:aspect-auto">
-              <img src={project.images.col1_2} alt="Project Detail" className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
+              <img src={project.images.col1_2} alt="Project Detail" onError={handleBrokenPreview} className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
             </div>
           </div>
           <div className="w-full sm:w-[60%] flex-1 rounded-[20px] sm:rounded-[40px] md:rounded-[60px] overflow-hidden min-h-[220px] sm:min-h-[300px]">
-            <img src={project.images.col2} alt="Project Main" className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
+            <img src={project.images.col2} alt="Project Main" onError={handleBrokenPreview} className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
           </div>
         </div>
         
