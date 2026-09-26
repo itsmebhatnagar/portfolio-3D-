@@ -150,10 +150,6 @@ function ProjectCard({ project, index, progress, range, targetScale, totalCards 
           </div>
         </div>
 
-        <div className="w-full h-full pb-2 md:pb-4 rounded-xl overflow-hidden min-h-[300px] sm:min-h-[350px]">
-          <img src={project.images.col2} alt="Project Main" onError={handleBrokenPreview} className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
-        </div>
-        
         <div className="w-full sm:hidden pt-2">
           <LiveProjectButton url={project.url} />
         </div>
