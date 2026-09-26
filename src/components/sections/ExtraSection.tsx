@@ -1,21 +1,16 @@
 import { FadeIn } from '../ui/FadeIn';
-import { Youtube, Twitch } from 'lucide-react';
+import { Youtube } from 'lucide-react';
 
 const roles = [
   {
-    title: "MR. OUTPLAYS",
-    role: "Channel Manager & Managing Moderator",
-    desc: "Managing channel operations, content strategy, and community growth for the MR. OUTPLAYS YouTube channel. Overseeing community engagement, managing live stream moderation, and ensuring a positive environment for a growing gaming community.",
+    title: "KIWI SHIO",
+    role: "Standard Moderator",
+    desc: "Assisting in chat moderation and community management during live broadcasts and content releases.",
     links: [
       {
         icon: Youtube,
-        url: "https://www.youtube.com/@mroutplays",
+        url: "https://www.youtube.com/@KiwiShioo",
         name: "YouTube"
-      },
-      {
-        icon: Twitch,
-        url: "https://www.twitch.tv/mroutplays006",
-        name: "Twitch"
       }
     ]
   },
@@ -28,11 +23,6 @@ const roles = [
         icon: Youtube,
         url: "https://www.youtube.com/@YTDANGEROP",
         name: "YouTube"
-      },
-      {
-        icon: Twitch,
-        url: "https://www.twitch.tv/tsxdanger",
-        name: "Twitch"
       }
     ]
   }

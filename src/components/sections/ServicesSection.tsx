@@ -13,11 +13,6 @@ const services = [
   },
   {
     num: "03",
-    name: "Frontend Design",
-    desc: "Crafting beautiful, intuitive interfaces with a focus on modern aesthetics, solid typography, and smooth interactions."
-  },
-  {
-    num: "04",
     name: "Self projects",
     desc: "Experimenting with new technologies and pushing boundaries through innovative personal side projects."
   }

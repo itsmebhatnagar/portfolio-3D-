@@ -8,22 +8,22 @@ const skillCategories = [
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express", "TypeScript", "Python", "C", "C++", "JavaScript", "GraphQL"],
+    skills: ["Node.js", "Express", "TypeScript", "Python", "C", "C++", "JavaScript"],
     className: "md:col-span-1 lg:col-span-1"
   },
   {
     title: "Database",
-    skills: ["PostgreSQL", "MongoDB", "Firebase"],
+    skills: ["PostgreSQL", "MongoDB", "Supabase"],
     className: "md:col-span-1 lg:col-span-1"
   },
   {
     title: "Tools",
-    skills: ["Git", "Docker", "Vite", "Figma", "Postman", "Vercel", "Loveable", "Stitch", "Google AI Studio"],
+    skills: ["Git", "Vite", "Figma", "Vercel", "Loveable", "Stitch", "Google AI Studio"],
     className: "md:col-span-2 lg:col-span-2"
   },
   {
     title: "IDEs",
-    skills: ["Windsurf", "VS Code", "Antigravity", "Turbo C", "Cursor"],
+    skills: ["VS Code", "Antigravity", "Cursor"],
     className: "md:col-span-1 lg:col-span-1"
   }
 ];
