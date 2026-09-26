@@ -12,45 +12,16 @@ const row1Images = [
   "https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif",
 ];
 
-const row2Images = [
-  "https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif",
-  "https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif",
-  "https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif",
-  "https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif",
-  "https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif",
-  "https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif",
-  "https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif",
-  "https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif",
-  "https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif",
-  "https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif",
-];
-
 const scrollRow1 = [...row1Images, ...row1Images];
-const scrollRow2 = [...row2Images, ...row2Images];
 
 export function MarqueeSection() {
   return (
-    <section className="bg-[#0C0C0C] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden flex flex-col gap-3">
+    <section className="bg-[#0C0C0C] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden">
       <div className="marquee-track marquee-track-1">
         <div className="marquee-group">
           {scrollRow1.map((src, idx) => (
             <img
               key={`r1-${idx}`}
-              src={src}
-              alt="Project Preview"
-              className="marquee-card"
-              loading="lazy"
-              decoding="async"
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="marquee-track marquee-track-2">
-        <div className="marquee-group">
-          {scrollRow2.map((src, idx) => (
-            <img
-              key={`r2-${idx}`}
               src={src}
               alt="Project Preview"
               className="marquee-card"
