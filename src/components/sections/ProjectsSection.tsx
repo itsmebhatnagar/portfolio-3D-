@@ -150,18 +150,8 @@ function ProjectCard({ project, index, progress, range, targetScale, totalCards 
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 flex-1 w-full h-full pb-2 md:pb-4 rounded-xl overflow-hidden min-h-[300px] sm:min-h-0">
-          <div className="w-full sm:w-[40%] flex flex-row sm:flex-col gap-3 sm:gap-6">
-            <div className="flex-1 sm:w-full rounded-[20px] sm:rounded-[40px] md:rounded-[60px] overflow-hidden sm:h-[clamp(130px,16vw,230px)] aspect-square sm:aspect-auto">
-              <img src={project.images.col1_1} alt="Project Detail" onError={handleBrokenPreview} className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
-            </div>
-            <div className="flex-1 sm:w-full rounded-[20px] sm:rounded-[40px] md:rounded-[60px] overflow-hidden sm:h-[clamp(160px,22vw,340px)] aspect-square sm:aspect-auto">
-              <img src={project.images.col1_2} alt="Project Detail" onError={handleBrokenPreview} className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
-            </div>
-          </div>
-          <div className="w-full sm:w-[60%] flex-1 rounded-[20px] sm:rounded-[40px] md:rounded-[60px] overflow-hidden min-h-[220px] sm:min-h-[300px]">
-            <img src={project.images.col2} alt="Project Main" onError={handleBrokenPreview} className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
-          </div>
+        <div className="w-full h-full pb-2 md:pb-4 rounded-xl overflow-hidden min-h-[300px] sm:min-h-[350px]">
+          <img src={project.images.col2} alt="Project Main" onError={handleBrokenPreview} className="w-full h-full object-cover transition-transform hover:scale-105 duration-700 hover:opacity-90" />
         </div>
         
         <div className="w-full sm:hidden pt-2">
